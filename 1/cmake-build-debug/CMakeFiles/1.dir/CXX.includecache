@@ -1,0 +1,72 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/SPbSTU/2 sem/progtechs/labs/1/base-types.hpp
+
+D:/SPbSTU/2 sem/progtechs/labs/1/circle.cpp
+iostream
+-
+cmath
+-
+circle.hpp
+D:/SPbSTU/2 sem/progtechs/labs/1/circle.hpp
+
+D:/SPbSTU/2 sem/progtechs/labs/1/circle.hpp
+shape.hpp
+D:/SPbSTU/2 sem/progtechs/labs/1/shape.hpp
+
+D:/SPbSTU/2 sem/progtechs/labs/1/input.cpp
+ios
+-
+iostream
+-
+input.hpp
+D:/SPbSTU/2 sem/progtechs/labs/1/input.hpp
+
+D:/SPbSTU/2 sem/progtechs/labs/1/input.hpp
+
+D:/SPbSTU/2 sem/progtechs/labs/1/main.cpp
+iostream
+-
+rectangle.hpp
+D:/SPbSTU/2 sem/progtechs/labs/1/rectangle.hpp
+circle.hpp
+D:/SPbSTU/2 sem/progtechs/labs/1/circle.hpp
+tests.hpp
+D:/SPbSTU/2 sem/progtechs/labs/1/tests.hpp
+
+D:/SPbSTU/2 sem/progtechs/labs/1/rectangle.cpp
+iostream
+-
+rectangle.hpp
+D:/SPbSTU/2 sem/progtechs/labs/1/rectangle.hpp
+
+D:/SPbSTU/2 sem/progtechs/labs/1/rectangle.hpp
+shape.hpp
+D:/SPbSTU/2 sem/progtechs/labs/1/shape.hpp
+
+D:/SPbSTU/2 sem/progtechs/labs/1/shape.hpp
+base-types.hpp
+D:/SPbSTU/2 sem/progtechs/labs/1/base-types.hpp
+
+D:/SPbSTU/2 sem/progtechs/labs/1/tests.cpp
+iostream
+-
+tests.hpp
+D:/SPbSTU/2 sem/progtechs/labs/1/tests.hpp
+rectangle.hpp
+D:/SPbSTU/2 sem/progtechs/labs/1/rectangle.hpp
+input.hpp
+D:/SPbSTU/2 sem/progtechs/labs/1/input.hpp
+
+D:/SPbSTU/2 sem/progtechs/labs/1/tests.hpp
+rectangle.hpp
+D:/SPbSTU/2 sem/progtechs/labs/1/rectangle.hpp
+circle.hpp
+D:/SPbSTU/2 sem/progtechs/labs/1/circle.hpp
+
