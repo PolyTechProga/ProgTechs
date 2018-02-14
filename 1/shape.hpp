@@ -5,12 +5,12 @@
 
 class Shape
 {
-  virtual double getArea() = 0;
-  virtual rectangle_t getFrameRect() = 0;
+  virtual const double getArea( ) = 0;
+  virtual const rectangle_t getFrameRect( ) = 0;
   virtual void move( point_t ) = 0;
   virtual void move( double, double) = 0;
-  virtual void print_info( ) = 0;
-  virtual void print_coordinates( ) = 0;
+  virtual const void printInfo( ) = 0; // current shape's properties
+  virtual const void printCoordinates( ) = 0; // current shape's center position
 };
 
 #endif //SHAPE_HPP

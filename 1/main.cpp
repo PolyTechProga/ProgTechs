@@ -1,18 +1,21 @@
 #include <iostream>
+
 #include "rectangle.hpp"
 #include "circle.hpp"
-#include "tests.hpp"
+#include "input.hpp"
 
 int main() {
-  std::cout << "Creating the rectangle..." << std::endl;
-  Rectangle rectangle = testCreatingRectangle();
+  std::cout << "Creating the Rectangle..." << std::endl;
+  Rectangle rectangle = createRectangle();
 
-  std::cout << "Creating the circle..." << std::endl;
-  Circle circle = testCreatingCircle();
+  std::cout << "Creating the Circle..." << std::endl;
+  Circle circle = createCircle();
 
-  testMovingRectangle(rectangle);
+  std::cout << "Moving the Rectangle.." << std::endl;
+  moveRectangle(rectangle);
 
-  testMovingCircle(circle);
+  std::cout << "Moving the Circle..." << std::endl;
+  moveCircle(circle);
 
   return 0;
 }

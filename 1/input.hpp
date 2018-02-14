@@ -1,24 +1,33 @@
 #ifndef INPUT_HPP
   #define INPUT_HPP
 
-#include <ios>  // Provides ios_base::failure
-#include <iostream>  // Provides cin
+#define CAN_BE_NEGATIVE true
+#define CAN_NOT_BE_NEGATIVE false
 
-#include "input.hpp"
+#include <ios>
+#include <iostream>
+
+#include "rectangle.hpp"
+#include "circle.hpp"
+
+Rectangle createRectangle( );
+Circle createCircle( );
+void moveRectangle( Rectangle & );
+void moveCircle( Circle & );
 
 template <typename T>
-T readFromStdIn()
+T readSafelyFromInputStream()
 {
   T result;
   std::cin >> result;
 
-  // Checking all symbols in stdin. If failbit set (wrong input type).
+  // Check all symbols in stdin. If failbit set (wrong input type).
   if ( std::cin.fail() || std::cin.get() != '\n' )
   {
-    // Clearing failbit
+    // Clear failbit
     std::cin.clear();
 
-    // Clearing stdin
+    // Clear stdin
     while ( std::cin.get() != '\n' );
 
     throw std::ios_base::failure("Wrong value");
@@ -38,7 +47,7 @@ T getValidatedInput( const char *message, const bool negative_allowed )
 
     try
     {
-      result = readFromStdIn<double>( );
+      result = readSafelyFromInputStream<double>();
 
       while ( !negative_allowed && result < 0 )
       {
@@ -57,4 +66,5 @@ T getValidatedInput( const char *message, const bool negative_allowed )
 
   return result;
 }
+
 #endif //INPUT_HPP

@@ -6,17 +6,18 @@
 class Rectangle : public Shape
 {
 public:
-  double getArea( ) override;
-  rectangle_t getFrameRect( ) override;
-  void move( point_t ) override;
-  void move( double x_offset, double y_offset ) override;
-  void print_info( ) override;
-  void print_coordinates( ) override;
+  const double getArea( ) override;
+  const rectangle_t getFrameRect( ) override;
 
   explicit Rectangle( rectangle_t );
 
+  void move( point_t ) override;
+  void move( double x_offset, double y_offset ) override;
+  const void printInfo() override;
+  const void printCoordinates() override;
+
 private:
-  rectangle_t circuit;
+  rectangle_t circuit_;
 };
 
 #endif //RECTANGLE_HPP

@@ -1,45 +1,45 @@
+#include "circle.hpp"
+
 #include <iostream>
 #include <cmath>
 
-#include "circle.hpp"
-
-double Circle::getArea( )
+const double Circle::getArea( )
 {
-  return M_PI * pow(radius, 2);
+  return M_PI * pow(radius_, 2);
 }
 
-rectangle_t Circle::getFrameRect( )
+const rectangle_t Circle::getFrameRect( )
 {
-  return rectangle_t { radius * 2, radius * 2, center_point };
+  return rectangle_t { radius_ * 2, radius_ * 2, center_point_ };
 }
 
 void Circle::move( const point_t new_position )
 {
-  center_point = new_position;
+  center_point_ = new_position;
 }
 
 void Circle::move( const double x_offset, const double y_offset )
 {
-  center_point.x += x_offset;
-  center_point.y += y_offset;
+  center_point_.x += x_offset;
+  center_point_.y += y_offset;
 }
 
-Circle::Circle( const point_t center, double radius ) : center_point( center ),
-                                                        radius( radius )
+Circle::Circle( const point_t center, double radius ) : center_point_( center ),
+                                                        radius_( radius )
 {
   // initially left blank
 }
 
-void Circle::print_info( )
+const void Circle::printInfo()
 {
   std::cout << "Circle: [area: " << getArea();
   std::cout << "; width: "  << getFrameRect().width;
   std::cout << "; height: " << getFrameRect().height;
-  std::cout << "; radius: " << radius;
-  std::cout << "]"  << std::endl;
+  std::cout << "; radius_: " << radius_;
+  std::cout << "]" << std::endl;
 }
 
-void Circle::print_coordinates( )
+const void Circle::printCoordinates()
 {
   std::cout << "Center position: (" << getFrameRect().pos.x;
   std::cout << "; " << getFrameRect().pos.y;
