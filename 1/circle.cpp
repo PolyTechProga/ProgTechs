@@ -33,8 +33,9 @@ Circle::Circle( const point_t center, double radius ) : center_point( center ),
 void Circle::print_info( )
 {
   std::cout << "Circle: [area: " << getArea();
-  std::cout << "; width: " << getFrameRect().width;
+  std::cout << "; width: "  << getFrameRect().width;
   std::cout << "; height: " << getFrameRect().height;
+  std::cout << "; radius: " << radius;
   std::cout << "]"  << std::endl;
 }
 

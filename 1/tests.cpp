@@ -6,47 +6,15 @@
 
 Rectangle testCreatingRectangle( )
 {
-  double rectangle_width;
-  double rectangle_height;
+  auto rectangle_width = getValidatedInput<double>( "Enter width of the rectangle: ",
+                                                    CAN_NOT_BE_NEGATIVE );
+  auto rectangle_height = getValidatedInput<double>( "Enter height of the rectangle: ",
+                                                     CAN_NOT_BE_NEGATIVE);
 
-  while ( true )
-  {
-    std::cout << "Enter width of the rectangle: ";
-
-    try
-    {
-      rectangle_width = getValidatedInput<double>();
-
-      while ( rectangle_width < 0 )
-      {
-        throw std::ios_base::failure("Wrong value.");
-      }
-    }
-    catch ( std::exception const &e )
-    {
-      std::cerr << e.what() << std::endl;
-
-      continue;
-    }
-
-    break;
-  }
-
-  std::cout << "Enter height of the rectangle: ";
-  std::cin  >> rectangle_height;
-  while ( rectangle_height < 0 )
-  {
-    std::cout << "Wrong value. Please, enter height of the rectangle again: ";
-    std::cin  >> rectangle_height;
-  }
-
-  double rectangle_center_position_x;
-  double rectangle_center_position_y;
-  std::cout << "Enter x coordinate of the rectangle's center: ";
-  std::cin  >> rectangle_center_position_x;
-
-  std::cout << "Enter y coordinate of the rectangle's center: ";
-  std::cin  >> rectangle_center_position_y;
+  auto rectangle_center_position_x = getValidatedInput<double>( "Enter x coordinate of the rectangle's center: ",
+                                                                CAN_BE_NEGATIVE );
+  auto rectangle_center_position_y = getValidatedInput<double>( "Enter y coordinate of the rectangle's center: ",
+                                                                CAN_BE_NEGATIVE );
 
   point_t rectangle_circuit_center = { rectangle_center_position_x, rectangle_center_position_y };
   rectangle_t rectangle_circuit = { rectangle_width, rectangle_height, rectangle_circuit_center };
@@ -60,19 +28,12 @@ Rectangle testCreatingRectangle( )
 
 Circle testCreatingCircle()
 {
-  double circle_radius;
-  std::cout << "Enter radius of the circle: ";
-  std::cin  >> circle_radius;
-
-  double circle_center_position_x;
-  double circle_center_position_y;
-
-  std::cout << "Enter x coordinate of the circle's center: ";
-  std::cin  >> circle_center_position_x;
-
-  std::cout << "Enter y coordinate of the circle's center: ";
-  std::cin  >> circle_center_position_y;
-
+  auto circle_radius  = getValidatedInput<double>( "Enter radius of the circle: ",
+                                                   CAN_NOT_BE_NEGATIVE );
+  auto circle_center_position_x = getValidatedInput<double>( "Enter x coordinate of the circle's center: ",
+                                                             CAN_BE_NEGATIVE );
+  auto circle_center_position_y = getValidatedInput<double>( "Enter y coordinate of the circle's center: ",
+                                                             CAN_BE_NEGATIVE );
   point_t circle_center = { circle_center_position_x, circle_center_position_y };
 
   Circle circle = Circle(circle_center, circle_radius);
@@ -85,14 +46,10 @@ Circle testCreatingCircle()
 void testMovingRectangle(Rectangle &rectangle) {
   std::cout << "1st. Moving rectangle by shifting its center to the new position." << std::endl;
 
-  double rectangle_new_center_position_x;
-  double rectangle_new_center_position_y;
-
-  std::cout << "Enter x coordinate of the new rectangle's center: ";
-  std::cin  >> rectangle_new_center_position_x;
-
-  std::cout << "Enter y coordinate of the new rectangle's center: ";
-  std::cin  >> rectangle_new_center_position_y;
+  auto rectangle_new_center_position_x = getValidatedInput<double>("Enter x coordinate of the new rectangle's center: ",
+                                                                   CAN_BE_NEGATIVE );
+  auto rectangle_new_center_position_y = getValidatedInput<double>("Enter y coordinate of the new rectangle's center: ",
+                                                                   CAN_BE_NEGATIVE );
 
   point_t rectangle_new_center = { rectangle_new_center_position_x, rectangle_new_center_position_y };
 
@@ -104,14 +61,10 @@ void testMovingRectangle(Rectangle &rectangle) {
 
   std::cout << "2nd. Moving rectangle by shifting its center coordinates to some values." << std::endl;
 
-  double rectangle_center_position_x_offset;
-  double rectangle_center_position_y_offset;
-
-  std::cout << "Enter x offset for the rectangle's center: ";
-  std::cin  >> rectangle_center_position_x_offset;
-
-  std::cout << "Enter y offset for the rectangle's center: ";
-  std::cin  >> rectangle_center_position_y_offset;
+  auto rectangle_center_position_x_offset = getValidatedInput<double>("Enter x offset for the rectangle's center: ",
+                                                                      CAN_BE_NEGATIVE );
+  auto rectangle_center_position_y_offset = getValidatedInput<double>("Enter y offset for the rectangle's center: ",
+                                                                      CAN_BE_NEGATIVE );
 
   rectangle.move( rectangle_center_position_x_offset, rectangle_center_position_y_offset );
 
@@ -123,14 +76,10 @@ void testMovingRectangle(Rectangle &rectangle) {
 void testMovingCircle(Circle &circle) {
   std::cout << "1st. Moving circle by shifting its center to the new position." << std::endl;
 
-  double circle_new_center_position_x;
-  double circle_new_center_position_y;
-
-  std::cout << "Enter x coordinate of the new circle's center: ";
-  std::cin  >> circle_new_center_position_x;
-
-  std::cout << "Enter y coordinate of the new circle's center: ";
-  std::cin  >> circle_new_center_position_y;
+  auto circle_new_center_position_x = getValidatedInput<double>("Enter x coordinate of the new circle's center: ",
+                                                                CAN_BE_NEGATIVE );
+  auto circle_new_center_position_y = getValidatedInput<double>("Enter y coordinate of the new circle's center: ",
+                                                                CAN_BE_NEGATIVE );
 
   point_t circle_new_center = { circle_new_center_position_x, circle_new_center_position_y };
 
@@ -142,14 +91,10 @@ void testMovingCircle(Circle &circle) {
 
   std::cout << "2nd. Moving circle by shifting its center coordinates to some values." << std::endl;
 
-  double circle_center_position_x_offset;
-  double circle_center_position_y_offset;
-
-  std::cout << "Enter x offset for the circle's center: ";
-  std::cin  >> circle_center_position_x_offset;
-
-  std::cout << "Enter y offset for the circle's center: ";
-  std::cin  >> circle_center_position_y_offset;
+  auto circle_center_position_x_offset = getValidatedInput<double>("Enter x offset for the circle's center: ",
+                                                                   CAN_BE_NEGATIVE );
+  auto circle_center_position_y_offset = getValidatedInput<double>("Enter y offset for the circle's center: ",
+                                                                   CAN_BE_NEGATIVE );
 
   circle.move( circle_center_position_x_offset, circle_center_position_y_offset );
 
@@ -157,4 +102,3 @@ void testMovingCircle(Circle &circle) {
   circle.print_info();
   circle.print_coordinates();
 }
-

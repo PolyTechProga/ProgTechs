@@ -8,7 +8,7 @@ int main() {
   Rectangle rectangle = testCreatingRectangle();
 
   std::cout << "Creating the circle..." << std::endl;
-  Circle    circle    = testCreatingCircle();
+  Circle circle = testCreatingCircle();
 
   testMovingRectangle(rectangle);
 
