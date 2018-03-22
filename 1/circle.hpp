@@ -10,10 +10,10 @@ public:
   const rectangle_t getFrameRect( ) override;
   void move( point_t ) override;
   void move( double x_offset, double y_offset ) override;
-  const void printInfo() override;
-  const void printCoordinates() override;
+  const void printInfo( ) override;
+  const void printCoordinates( ) override;
 
-  explicit Circle( point_t center, double radius );
+  Circle( point_t center, double radius );
 
 private:
   point_t center_point_;
